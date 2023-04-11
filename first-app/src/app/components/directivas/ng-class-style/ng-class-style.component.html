@@ -1,0 +1,26 @@
+<mat-accordion>
+  <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title><b>{{ titleNgClassStyle }}</b></mat-panel-title>
+        <mat-panel-description>
+          Podemos alterar a classe e estilo do nosso componente conforme a necessidade, via expressão Booleana ou a partir do .ts
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <article class="articles">
+        <div [class.blue]="testeClass" [class.red]="testeClass === false">
+          teste
+          <h2 [class.h2-branco]="testeClass" [class.h2-preto]="testeClass === false">Pior prática</h2>
+        </div>
+        <br>
+        <div [ngClass]="{ 'blue': testeClass, 'red':!testeClass }">
+          teste
+          <h2 [ngClass]="{ 'h2-branco': testeClass, 'h2-preto':!testeClass }">Melhor prática</h2>
+        </div>
+        <button mat-raised-button color="primary" (click)="alterarClasse()">Alterar Cor</button>
+      </article>
+
+      <article class="articles">
+        <h2 [ngStyle]="cssH2VindoDoTS">Testando ngStyle</h2>
+      </article>
+  </mat-expansion-panel>
+</mat-accordion>
