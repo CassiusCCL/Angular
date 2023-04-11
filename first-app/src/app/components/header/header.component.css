@@ -1,0 +1,13 @@
+ul {
+  margin: 0;
+  display: flex;
+  gap: 20px;
+}
+
+/*
+li {
+  display: inline;
+  margin-right: 20px;
+}
+*/
+

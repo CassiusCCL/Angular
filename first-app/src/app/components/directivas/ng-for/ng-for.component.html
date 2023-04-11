@@ -1,0 +1,38 @@
+
+<mat-expansion-panel>
+  <mat-expansion-panel-header>
+    <mat-panel-title>{{ titleNgFor }}</mat-panel-title>
+    <mat-panel-description>
+      ngFor serve para fazermos iterações com elementos do nosso .ts para exibir várias dados.
+    </mat-panel-description>
+  </mat-expansion-panel-header>
+  <br>
+  <article class="articles">
+    <p><b>Array Simples</b></p>
+    <ul>
+      <li *ngFor="let time of times">Entrou no Campeonato: <b>{{ time }}</b></li>
+    </ul>
+  </article>
+
+  <article>
+    <p><b>Array Composto</b></p>
+    <div>
+      <table style="background-color: white; color: blue; border-style: solid;">
+        <thead style="border-style: solid;">
+          <tr>
+            <th>Login</th>
+            <th>Senha</th>
+            <th>Email</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let usuario of usuarios">
+          <tr>
+            <td>{{ usuario.login }}</td>
+            <td>{{ usuario.senha }}</td>
+            <td>{{ usuario.email }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </article>
+</mat-expansion-panel>

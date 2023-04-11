@@ -1,0 +1,26 @@
+.mat-panel-title {
+  color: blue;
+}
+
+.mat-panel-description {
+  color: lightblue;
+}
+
+.mat-expansion-panel {
+  background-color: lightgray;
+}
+
+.mat-expansion-panel-header {
+  background-color: lightgray;
+  color: blue;
+}
+
+.mat-panel-title {
+  background-color: lightgray;
+  color: red;
+}
+
+.mat-panel-description {
+  background-color: lightgray;
+  color: yellow;
+}

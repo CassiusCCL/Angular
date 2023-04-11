@@ -1,0 +1,94 @@
+<section id="principal">
+  <h1>Data Binding</h1>
+
+  <section id="conteudo">
+    <mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>Interpolação</mat-panel-title>
+          <mat-panel-description>
+            Obtendo informações do .ts e usando expressões matemáticas o .html
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+
+        <h4><b>Recuperando as informações do arquivo .ts</b></h4>
+        <p>Esse título vem do data-binding-component.ts - <b>{{title}}</b></p>
+        <p>A soma de {{ numero1 }} + {{ numero2 }} = <b>{{ resultado }}</b></p>
+
+        <h4><b>Retornarndo um texo a partir de uma função.</b></h4>
+        <p><i>{{ retornarTexto() }}</i></p>
+
+
+      </mat-expansion-panel>
+    </mat-accordion>
+
+    <mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>Property Binding</mat-panel-title>
+          <mat-panel-description>
+            Trabalhar com as propriedades dos meus elementos.
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+
+        <h4><b>Propriedade de Imagem - Interpolação</b></h4>
+        <img src="{{ urlImagem }}">
+
+        <h4><b>Propriedade de Imagem - Property Binding</b></h4>
+        <img [src]=" urlImagem ">
+
+        <br>
+        <mat-form-field>
+          <mat-label>Entre com a informação</mat-label>
+          <input matInput [value] = "valorInput">
+        </mat-form-field>
+      </mat-expansion-panel>
+    </mat-accordion>
+
+    <mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>Event Binding</mat-panel-title>
+          <mat-panel-description>
+            Trabalhar com os eventos gerados a partir de alguma ação.
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <button (click)='emitirAlerta()'>Clique Aqui!</button>
+      </mat-expansion-panel>
+    </mat-accordion>
+
+    <mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>Two  Way Binding</mat-panel-title>
+          <mat-panel-description>
+            Forma de atualizar ambos os arquivos.
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <br>
+        <mat-form-field>
+          <mat-label>Má prática!</mat-label>
+            <input matInput #twoWay1 [value]="" (input)="valorToWay1 = twoWay1.value">
+        </mat-form-field>
+        <br>
+        <p>O texto digitado pelo usuário no input é: <b>{{ valorToWay1 }}</b></p>
+        <br>
+        <mat-form-field>
+          <mat-label>Boas práticas!</mat-label>
+            <input matInput [(ngModel)]="valorToWay2">
+        </mat-form-field>
+        <br>
+        <p>O texto digitado pelo usuário no input é: <b>{{ valorToWay2 }}</b></p>
+        <br>
+        <mat-form-field>
+          <mat-label>Somar Dois Números</mat-label>
+            <input matInput [(ngModel)]="numero1">
+            <mat-label> + </mat-label>
+            <input matInput [(ngModel)]="numero2">
+            <mat-label> = {{ somar(numero1, numero2) }}</mat-label>
+        </mat-form-field>
+        <br>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </section>
+</section>

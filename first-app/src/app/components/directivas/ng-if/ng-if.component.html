@@ -1,0 +1,21 @@
+<mat-accordion>
+  <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>{{ titleNg }}</mat-panel-title>
+        <mat-panel-description>
+          ngIf | ngIf e Else | Hidden - São possibilidades que temos para exibir algo ou não.
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <br>
+      <p><b>Hidden</b></p>
+      <p [hidden]="ocultar">continuação Hidden...</p>
+      <br>
+      <p><b>ngIf</b></p>
+      <p *ngIf="!ocultar">continuação ngIf...</p>
+      <br>
+      <p *ngIf="arrayAny.length > 0">Números: {{ arrayAny }}</p>
+  </mat-expansion-panel>
+  <button mat-raised-button color="primary" (click)="esconderElemento()">{{ textoBotao }}</button>
+  <button mat-raised-button color="primary" (click)="adiconarItem()">Adicionar</button>
+  <button mat-raised-button color="primary" (click)="removerItem()">Remover</button>
+</mat-accordion>
